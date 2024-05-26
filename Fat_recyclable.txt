@@ -1,0 +1,8 @@
+Write a solution to find the ids of products that are both low fat and recyclable.
+
+# Write your MySQL query statement below
+Select product_id
+From
+Products
+Where low_fats = 'Y'
+and recyclable = 'Y'
