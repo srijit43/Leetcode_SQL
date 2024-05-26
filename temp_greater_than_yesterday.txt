@@ -1,0 +1,9 @@
+Write a solution to find all dates' Id with higher temperatures compared to its previous dates (yesterday).
+
+SELECT
+    a.id AS 'Id'
+FROM
+    weather as a
+        JOIN
+    weather as b ON DATEDIFF(a.recordDate, b.recordDate) = 1
+        AND a.Temperature > b.Temperature
