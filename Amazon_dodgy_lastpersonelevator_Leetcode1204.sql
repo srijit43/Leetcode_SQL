@@ -35,7 +35,14 @@ where
 where a.turn >= turn) <= 1000
 order by turn desc
 
+-- Another way
 
+with cte as(
+Select *, sum(weight) over (order by turn) as cum_weight
+from persons)
+
+ Select top 1 person_name from cte where cum_weight <= 1000
+ order by turn desc
 
 
 
